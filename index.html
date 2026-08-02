@@ -61,22 +61,23 @@
 
 <style>
   :root {
-    --dark-bg: #1a1a1a;
-    --darker-bg: #0f0f0f;
-    --dark-teal: #2c5f5d;
-    --teal: #4a9b99;
-    --purple: #7d5ba6;
-    --dark-coral: #d16666;
+    --navy-deep: #0a1f2e;
+    --navy-medium: #142e42;
+    --navy-light: #1e3d54;
+    --teal-light: #7dd3c0;
+    --teal-accent: #6ec9b8;
+    --teal-dark: #5ab5a3;
+    --cream: #f5f1e8;
     --coral: #e88383;
-    --text-primary: #e8e8e8;
-    --text-secondary: #b8b8b8;
+    --text-primary: #e8f4f2;
+    --text-secondary: #b8d4ce;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { -webkit-text-size-adjust: 100%; }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-    background: #181818;
+    background: var(--navy-deep);
     color: var(--text-primary);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
@@ -102,15 +103,15 @@
   }
   .tagline {
     font-size: clamp(1.25rem, 3vw, 1.75rem);
-    color: var(--teal);
+    color: var(--teal-light);
     font-weight: 400;
     line-height: 1.4;
   }
 
   /* Signup Section - Priority */
   .signup {
-    background: var(--dark-bg);
-    border: 1px solid var(--dark-teal);
+    background: var(--navy-medium);
+    border: 1px solid var(--teal-accent);
     border-radius: 4px;
     padding: 3rem;
     margin-bottom: 4rem;
@@ -153,19 +154,20 @@
     font-family: inherit;
     font-size: 1rem;
     padding: 1rem 1.25rem;
-    border: 1px solid #333;
+    border: 1px solid var(--navy-light);
     border-radius: 3px;
-    background: var(--darker-bg);
+    background: var(--navy-deep);
     color: var(--text-primary);
     width: 100%;
   }
   input::placeholder {
-    color: #666;
+    color: var(--text-secondary);
+    opacity: 0.6;
   }
   input:focus {
     outline: none;
-    border-color: var(--teal);
-    background: var(--darker-bg);
+    border-color: var(--teal-accent);
+    background: var(--navy-deep);
   }
   button {
     font-family: inherit;
@@ -174,14 +176,15 @@
     padding: 1rem 2rem;
     border: none;
     border-radius: 3px;
-    background: var(--dark-coral);
-    color: #fff;
+    background: var(--coral);
+    color: var(--navy-deep);
     cursor: pointer;
-    transition: background 0.2s ease;
+    transition: all 0.2s ease;
     white-space: nowrap;
   }
   button:hover {
-    background: var(--coral);
+    background: #f59393;
+    transform: translateY(-1px);
   }
   button:active {
     transform: translateY(1px);
@@ -224,7 +227,7 @@
     max-width: 100%;
     width: 300px;
     border-radius: 3px;
-    border: 2px solid var(--dark-teal);
+    border: 2px solid var(--teal-accent);
   }
   .about-photo p {
     color: var(--text-secondary);
@@ -246,9 +249,9 @@
     text-align: center;
     margin-bottom: 4rem;
     padding: 2rem;
-    background: var(--dark-bg);
+    background: var(--navy-medium);
     border-radius: 3px;
-    border: 1px solid #333;
+    border: 1px solid var(--navy-light);
   }
   .youtube-link p {
     color: var(--text-secondary);
@@ -259,14 +262,14 @@
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
-    color: var(--coral);
+    color: var(--teal-light);
     text-decoration: none;
     font-size: 1.125rem;
     font-weight: 600;
     transition: color 0.2s ease;
   }
   .youtube-link a:hover {
-    color: var(--dark-coral);
+    color: var(--teal-accent);
   }
   .youtube-link svg {
     width: 28px;
@@ -277,7 +280,7 @@
   .faq {
     margin-bottom: 3rem;
     padding-top: 3rem;
-    border-top: 1px solid #333;
+    border-top: 1px solid var(--navy-light);
   }
   .faq h2 {
     font-size: clamp(1.75rem, 4vw, 2.25rem);
@@ -288,10 +291,10 @@
   }
   .faq-item {
     margin-bottom: 2rem;
-    background: var(--dark-bg);
+    background: var(--navy-medium);
     padding: 1.5rem;
     border-radius: 3px;
-    border: 1px solid #2a2a2a;
+    border: 1px solid var(--navy-light);
   }
   .faq .q {
     font-weight: 600;
@@ -307,26 +310,28 @@
 
   /* Logo */
   .logo {
-    width: min(60%, 350px);
+    width: min(70%, 400px);
     height: auto;
-    margin: 0 auto 2rem;
+    margin: 0 auto 2.5rem;
     display: block;
+    mix-blend-mode: lighten;
   }
 
   /* Footer */
   hr {
     border: 0;
-    border-top: 1px solid #333;
+    border-top: 1px solid var(--navy-light);
     margin: 3rem 0 2rem;
   }
   footer {
     font-size: 0.95rem;
-    color: #666;
+    color: var(--text-secondary);
+    opacity: 0.8;
     text-align: center;
     line-height: 1.8;
   }
   footer a {
-    color: var(--teal);
+    color: var(--teal-accent);
     text-decoration: none;
   }
   footer a:hover {
@@ -351,8 +356,7 @@
   <main class="wrap">
     <!-- Header -->
     <header class="header">
-      <img src="/logo.png" alt="Buy Berghia Logo" class="logo">
-      <h1>Buy Berghia</h1>
+      <img src="/logo.png" alt="Buy Berghia - Aquacultured Berghia Nudibranchs" class="logo">
       <p class="tagline">Get Rid of Aiptasia Naturally - Berghia Nudibranchs delivered directly to your door</p>
     </header>
 
